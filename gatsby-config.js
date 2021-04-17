@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Gamenacity",
+    author: "Foxnacity",
   },
   plugins: [
     "gatsby-plugin-sass",

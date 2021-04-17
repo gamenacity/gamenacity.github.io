@@ -1,0 +1,43 @@
+//===================================================//
+//                      loading                     //
+//=================================================//
+
+@keyframes textShowup {
+    0% {
+        text-shadow: $accent 0px 0px;
+        border-bottom: $accent 0px solid;
+    }
+    90%{
+        text-shadow: $accent 0px 0px;
+        border-bottom: $accent 0px solid;
+    }
+    100% {
+        text-shadow: $accent .06em .03em;
+        border-bottom: $accent 5px solid;
+    }
+}
+@keyframes textShowup-nonborder {
+    0% {
+        text-shadow: $accent 0px 0px;
+    }
+    90%{
+        text-shadow: $accent 0px 0px;
+    }
+    100% {
+        text-shadow: $accent .06em .03em;
+    }
+}
+
+
+//===================================================//
+//                  highlight                       //
+//=================================================//
+
+@keyframes shadowHighlight{
+    0% {
+        text-shadow: $accent 0px 0px;
+    }
+    100% {
+        text-shadow: $accent .06em .03em;
+    }
+}

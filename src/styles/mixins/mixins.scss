@@ -1,0 +1,52 @@
+@mixin reset(){
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@mixin wymiary($width, $height){
+    width: $width;
+    height: $height;
+}
+@mixin simpleflex($dir:row, $jus:left, $align:flex-start){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jus;
+    align-items: $align;
+}
+@mixin simplegridcreator($colwidth,$colrep,$rowwidth,$rowrep){
+    display: grid;
+    grid-template-columns: repeat($colrep, $colwidth);
+    grid-template-rows: repeat($rowrep, $rowwidth);
+}
+@mixin marginesy($width, $height){
+    margin: $width;
+    padding: $height;
+}
+@mixin paddingi($padtop, $padleft, $padbot, $padright){
+    padding-top: $padtop;
+    padding-left: $padleft;
+    padding-bottom: $padbot;
+    padding-right: $padright;
+}
+@mixin marginy($martop, $marleft, $marbot,$marright){
+        margin-top: $martop;
+        margin-left: $marleft;
+        margin-bottom: $marbot;
+        margin-right: $marright;
+
+}
+
+@mixin glassmorph($bgcolor, $blur, $shadowcolor){
+    background: $bgcolor;
+    box-shadow: 0 8px 32px 0 $shadowcolor;
+    backdrop-filter: blur( $blur );
+    -webkit-backdrop-filter: blur( $blur );
+    border-radius: 10px;
+}
+
+@mixin gradientHighlight($color1, $color2){
+    background: -webkit-linear-gradient(45deg, $color1 0%, $color2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
