@@ -3,6 +3,7 @@ module.exports = {
     title: "Gamenacity",
     author: "Foxnacity",
   },
+  pathPrefix: "/gamenacity.github.io",
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
