@@ -9,10 +9,10 @@ const Welcome = () => {
                     Gamenacity
                 </h1>
                 <p className="welcome-section__content">
-                    Yeah.. That place where we&nbsp;try&nbsp;to&nbsp;talk about <span className="bold">Games!</span>
+                    Ta.. to miejsce gdzie rozmawiamy o&nbsp;<span className="bold">Grach!</span>
                 </p>
                 <p className="welcome-section__highlight">
-                    Sort of..
+                    Jakoś..
                 </p>
             </div>
         </section>

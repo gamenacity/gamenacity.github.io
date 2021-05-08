@@ -3,41 +3,84 @@
 //=================================================//
 
 @keyframes textShowup {
-    0% {
-        text-shadow: $accent 0px 0px;
-        border-bottom: $accent 0px solid;
-    }
-    90%{
-        text-shadow: $accent 0px 0px;
-        border-bottom: $accent 0px solid;
-    }
-    100% {
-        text-shadow: $accent .06em .03em;
-        border-bottom: $accent 5px solid;
-    }
+  0% {
+    text-shadow: $accent 0px 0px;
+    border-bottom: $accent 0px solid;
+  }
+  90% {
+    text-shadow: $accent 0px 0px;
+    border-bottom: $accent 0px solid;
+  }
+  100% {
+    text-shadow: $accent 0.06em 0.03em;
+    border-bottom: $accent 5px solid;
+  }
 }
 @keyframes textShowup-nonborder {
-    0% {
-        text-shadow: $accent 0px 0px;
-    }
-    90%{
-        text-shadow: $accent 0px 0px;
-    }
-    100% {
-        text-shadow: $accent .06em .03em;
-    }
+  0% {
+    text-shadow: $accent 0px 0px;
+  }
+  90% {
+    text-shadow: $accent 0px 0px;
+  }
+  100% {
+    text-shadow: $accent 0.06em 0.03em;
+  }
 }
+//===================================================//
+//                  hover article                   //
+//=================================================//
 
+@keyframes showArticleFirst {
+  0% {
+    margin-left: 2em;
+    transform: rotate(0deg);
+  }
+  100% {
+    margin-left: 0em;
+    transform: rotate(-5deg);
+  }
+}
+@keyframes hideArticleFirst {
+  0% {
+    margin-left: 0em;
+    transform: rotate(-5deg);
+  }
+  100% {
+    margin-left: 2em;
+    transform: rotate(0deg);
+  }
+}
+@keyframes showArticle {
+  0% {
+    margin-left: -2em;
+    transform: rotate(0deg);
+  }
+  100% {
+    margin-left: -4em;
+    transform: rotate(-5deg);
+  }
+}
+@keyframes hideArticle {
+  0% {
+    margin-left: -4em;
+    transform: rotate(-5deg);
+  }
+  100% {
+    margin-left: -2em;
+    transform: rotate(0deg);
+  }
+}
 
 //===================================================//
 //                  highlight                       //
 //=================================================//
 
-@keyframes shadowHighlight{
-    0% {
-        text-shadow: $accent 0px 0px;
-    }
-    100% {
-        text-shadow: $accent .06em .03em;
-    }
+@keyframes shadowHighlight {
+  0% {
+    text-shadow: $accent 0px 0px;
+  }
+  100% {
+    text-shadow: $accent 0.06em 0.03em;
+  }
 }

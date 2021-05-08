@@ -1,0 +1,78 @@
+@import "../../mixins/mixins.scss";
+@import "../../variables/variables.scss";
+@import "../../animations/animations.scss";
+
+.newestarticles {
+  background-color: #101626bd;
+  padding: 1em;
+  margin: 2em 0px;
+  overflow-x: auto;
+  @include wymiary(100%, 120vw);
+  @include simpleflex(row, space-between, center);
+  &__title {
+    color: $main-color;
+    font-family: $sans;
+    font-weight: bold;
+    text-align: center;
+    font-size: $ps-t;
+    text-shadow: $accent 0.06em 0.03em;
+    padding: 0px 0.5em;
+  }
+  &__list {
+    @include simpleflex(row, center, center);
+    position: relative;
+  }
+}
+.article {
+  @include wymiary(80vw, 100vw);
+  background-color: $dark-2;
+  padding: 2em;
+  box-shadow: -2px -2px 6px #000;
+  margin-left: 2em;
+  animation: hideArticleFirst 0.2s alternate;
+  &__title {
+    color: $main-color;
+    font-size: calc($ps-c + 10px);
+    font-family: $sans;
+    text-align: center;
+    text-shadow: $accent 0.06em 0.03em;
+    padding: 0em 1.5em;
+  }
+  &__date {
+    color: $main-color;
+    font-size: $ps-c;
+    font-family: $sans;
+    text-align: center;
+    text-shadow: $accent 0.06em 0.03em;
+    margin-bottom: 1em;
+  }
+  &:hover {
+    animation: showArticleFirst 0.2s alternate;
+    margin-left: 0em;
+    transform: rotate(-5deg);
+  }
+  &__image {
+    @include wymiary(30vw, 30vw);
+    border-radius: 50vw;
+    margin: auto;
+  }
+  &__text {
+    margin-top: 1em;
+    color: $main-color;
+    font-size: $ps-c;
+    font-family: $sans;
+    text-align: center;
+  }
+}
+@for $i from 2 through 5 {
+  .article:nth-of-type(#{$i}) {
+    margin-left: -2em;
+    z-index: #{$i};
+    animation: hideArticle 0.2s alternate;
+    &:hover {
+      animation: showArticle 0.2s alternate;
+      margin-left: -4em;
+      transform: rotate(-5deg);
+    }
+  }
+}
