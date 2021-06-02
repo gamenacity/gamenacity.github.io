@@ -37,7 +37,7 @@
   border-radius: 5em;
   &__title {
     color: $main-color;
-    font-size: calc($ps-c + 10px);
+    font-size: calc(#{$ps-c} + 10px);
     font-family: $sans;
     text-align: center;
     text-shadow: $accent 0.06em 0.03em;
@@ -94,7 +94,7 @@
   .article {
     @include wymiary(60vw, 90vw);
     &__title {
-      font-size: calc($s540-c + 10px);
+      font-size: calc(#{$s540-c} + 10px);
     }
     &__date {
       font-size: $s540-c;
@@ -122,7 +122,7 @@
   .article {
     @include wymiary(45vw, 70vw);
     &__title {
-      font-size: calc($s720-c + 10px);
+      font-size: calc(#{$s720-c} + 10px);
     }
     &__date {
       font-size: $s720-c;
@@ -156,7 +156,7 @@
     }
     @include wymiary(30vw, 50vw);
     &__title {
-      font-size: calc($s1024-t + 10px);
+      font-size: calc(#{$s1024-t} + 10px);
     }
     &__date {
       font-size: $s1024-c;
@@ -195,7 +195,7 @@
   .article {
     @include wymiary(20vw, 35vw);
     &__title {
-      font-size: calc($s1600-t + 10px);
+      font-size: calc(#{$s1600-t} + 10px);
     }
     &__date {
       font-size: $s1600-c;
