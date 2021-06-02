@@ -4,6 +4,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import Welcome from "../components/welcome"
 import Head from "../components/head"
+import Form from "../components/contactform"
 import styled from 'styled-components'
 import "../styles/componentStyles/indexpage/theme.scss"
 import * as newarticles from "../styles/componentStyles/mainpagearticles/newestarticles.module.scss"
@@ -76,7 +77,8 @@ const IndexPage = () => {
             {
               data.allMarkdownRemark.edges.map((edge) => {
                 return (
-                    <article className={newarticles.article}>
+                  <Link to={`/blog/${edge.node.fields.slug}`} className={newarticles.article}>
+                    <article className={newarticles.flex}>
                       <h2 className={newarticles.article__title}>
                         {edge.node.frontmatter.title}
                       </h2>
@@ -89,17 +91,16 @@ const IndexPage = () => {
                           {edge.node.frontmatter.description}
                         </p>
                       </div>
-                      <Link to={`/blog/${edge.node.fields.slug}`} className={newarticles.article__readmore}>
-                        Czytaj więcej...
-                      </Link>
+                        <span className={newarticles.article__readmore}>Czytaj więcej...</span>
                     </article>
-
+                  </Link>
                 )
               })
             }
           </div>
         </section>
       </Main>
+      <Form />
       <Footer />
     </div>
   )

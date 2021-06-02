@@ -24,7 +24,8 @@
   list-style: none;
   position: relative;
   &__element {
-    margin: 0px 1em;
+    margin: 0.5em 1em;
+    text-decoration: underline;
   }
   &__link {
     color: $main-color;
@@ -65,6 +66,7 @@
   .menu {
     &__element {
       margin: 0px 0.75em;
+      text-decoration: none;
     }
     &__link {
       font-size: $s540-c;

@@ -17,6 +17,7 @@ const Header = () => {
     const [show, setShow] = useState(false)
     const [men, menShow] = useState(false)
 
+    
     function updateDisplay() {
         const screen = window.matchMedia('(min-width: 540px)')
         screen.matches ? setShow(true) : setShow(false)

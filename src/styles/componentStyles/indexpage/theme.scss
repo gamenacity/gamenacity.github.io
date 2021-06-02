@@ -2,92 +2,92 @@
 @import "../../variables/variables.scss";
 @import "../../animations/animations.scss";
 
-.theme-section{
-    @include simpleflex(column, center, center);
-    background-color: darken(#101626dc, 4%);
-    padding: 7vw;
-    &__title{
-        font-size: $ps-t;
-        color: $light;
-        font-weight: 600;
-        font-family: $sans;
-        margin-bottom: 1em;
-    }
-    &__content{
-        font-size: $ps-c;
-        color: $light;
-        font-family: $serif;
-        margin-bottom: 1em;
-    }
-    &__imagebox{
-        width: 100%;
-        height: 40vw;
-        background-image: url(../../../images/nierImage.png);
-        background-size: 150%;
-        background-repeat: no-repeat;
-        background-position: -70px -105px;
-        border-radius: 61px;
-        margin: auto;
-        margin-top: 2em;
-    }
+.theme-section {
+  @include simpleflex(column, center, center);
+  background-color: darken(#101626dc, 4%);
+  padding: 7vw;
+  &__title {
+    font-size: $ps-t;
+    color: $light;
+    font-weight: 600;
+    font-family: $sans;
+    margin-bottom: 1em;
+  }
+  &__content {
+    font-size: $ps-c;
+    color: $light;
+    font-family: $serif;
+    margin-bottom: 1em;
+  }
+  &__imagebox {
+    width: 100%;
+    height: 40vw;
+    background-image: url(../../../images/nierImage.png);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: -70px -105px;
+    border-radius: 61px;
+    margin: auto;
+    margin-top: 2em;
+  }
 }
 @media (min-width: 540px) {
-    .theme-section{
-        &__title{
-            font-size: $s540-t;
-        }
-        &__content{
-            font-size: $s540-c;
-        }
-        &__imagebox{
-            background-position: -70px -125px;
-        }
+  .theme-section {
+    &__title {
+      font-size: $s540-t;
     }
-    
+    &__content {
+      font-size: $s540-c;
+    }
+    &__imagebox {
+      background-position: -70px -125px;
+    }
+  }
 }
 @media (min-width: 720px) {
-    .theme-section{
-        &__title{
-            font-size: $s720-t;
-        }
-        &__content{
-            font-size: $s720-c;
-        }
-        &__imagebox{
-            background-size: 130%;
-            background-position: -70px -155px;
-        }
+  .theme-section {
+    &__title {
+      font-size: $s720-t;
     }
+    &__content {
+      font-size: $s720-c;
+    }
+    &__imagebox {
+      background-size: 130%;
+      background-position: -70px -155px;
+    }
+  }
 }
 @media (min-width: 1024px) {
-    .theme-section{
-        @include simpleflex(row,center, center);
-        &__title{
-            font-size: $s1024-t;
-        }
-        &__content{
-            font-size: $s1024-c;
-        }
-        &__contentbox{
-            width: 50%;
-        }
-        &__imagebox{
-            width: 25vw;
-            height: 25vw;
-            background-size: 190%;
-            background-position: -70px -20px;
-            border-radius: 61px;
-        }
-
+  .theme-section {
+    @include simpleflex(row, center, center);
+    &__title {
+      font-size: $s1024-t;
     }
+    &__content {
+      font-size: $s1024-c;
+    }
+    &__contentbox {
+      width: 50%;
+    }
+    &__imagebox {
+      width: 25vw;
+      height: 25vw;
+      background-size: 190%;
+      background-position: -70px -20px;
+      border-radius: 61px;
+    }
+  }
 }
 @media (min-width: 1600px) {
-    .theme-section{
-        &__title{
-            font-size: $s1600-t;
-        }
-        &__content{
-            font-size: $s1600-c;
-        }
+  .theme-section {
+    width: 80%;
+    margin: auto;
+    &__title {
+      font-size: $s1600-t;
     }
+    &__content {
+      font-size: $s1600-c;
+    }
+  }
 }
