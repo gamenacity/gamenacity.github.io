@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import "../styles/componentStyles/header/header.scss"
+import styled from 'styled-components'
+import colors from '../data/colors'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
 const Header = () => {
@@ -13,6 +14,24 @@ const Header = () => {
             }
         }
     `)
+
+    //navbar functionality
+    let prevScrollPos = typeof window !== `undefined` ? window.pageYOffset : ''
+
+    function barHide(){
+        const currentScrollPos = window.pageYOffset
+        const nav = document.querySelector('#navbar')
+        if(prevScrollPos > currentScrollPos){
+            nav.style.top = "0px"
+        } else {
+            nav.style.top = "-300px"
+        }
+        prevScrollPos = currentScrollPos
+    }
+    useEffect(()=>{
+        window.addEventListener('scroll', barHide)
+        return () => window.removeEventListener('scroll', barHide)
+    },[])
 
     const [show, setShow] = useState(false)
     const [men, menShow] = useState(false)
@@ -29,42 +48,108 @@ const Header = () => {
         return () => window.removeEventListener("resize", updateDisplay)
     })
 
-    return (
-        <header className="core-header">
-            {
-                !show && <h2 className="core-header__title">
-                    {data.site.siteMetadata.title}
-                </h2>
+    const CoreHeader = styled.nav`
+        width: 100%;
+        padding: 2em;
+        background-color: ${colors.blue};
+        position: sticky;
+        top: 0;
+        transition: top 0.3s;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    `
+    const HeaderTitle = styled.h2`
+        color: ${colors.yellow};
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-family:"Montserrat", sans-serif;
+    `
+    const NavWrapper = styled.div`
+        max-width: 1920px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1em;
+    `
+    const Menu = styled.ul`
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1em;
+    `
+    const MenuElement = styled.li`
+        list-style: none;
+        a{
+            color: ${colors.yellow};
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            font-size: clamp(1rem, 1vw, 2rem);
+            position: relative;
+            &:before{
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: 0;
+                background-color: ${colors.yellow};
+                bottom: -3px;
+                left: 0;
+                transition: 0.3s;
+                z-index: 12;
             }
-            <nav className="core-header__menu">
+            &:after{
+                content: '';
+                position: absolute;
+                height: 3px;
+                width: 0;
+                background-color: ${colors.orange};
+                bottom: -1px;
+                left: 2px;
+                transition: 0.3s;
+            }
+            &:hover{
+                &:before{
+                    width: 100%;
+                }
+                &:after{
+                    width: 100%;
+                }
+            }
+        }
+    `
+    return (
+        <CoreHeader id="navbar">
+                <NavWrapper>
                 {
-                    show && <ul className="menu">
-                        <li className="menu__element">
-                            <h1 className="menu__title">
-                                {data.site.siteMetadata.title}
-                            </h1>
-                        </li>
-                        <li className="menu__element">
-                            <Link to="/" className="menu__link">
-                                Home
-                            </Link>
-                        </li>
-                        <li className="menu__element">
-                            <Link to="/" className="menu__link">
-                                Blog
-                            </Link>
-                        </li>
-                        <li className="menu__element">
-                            <Link to="/" className="menu__link">
-                                About us
-                            </Link>
-                        </li>
-                        <li className="menu__element">
-                            <Link to="/" className="menu__link">
-                                Contact
-                            </Link>
-                        </li>
-                    </ul>
+                    show&&<Menu>
+                    <MenuElement>
+                        <Link to="/" className="menu__link">
+                            Home
+                        </Link>
+                    </MenuElement>
+                    <MenuElement>
+                        <Link to="/blog" className="menu__link">
+                            Blog
+                        </Link>
+                    </MenuElement>
+                    </Menu>
+                }
+                <HeaderTitle>
+                    {data.site.siteMetadata.title}
+                </HeaderTitle>
+                {
+                    show&&<Menu>
+                    <MenuElement>
+                        <Link to="/about" className="menu__link">
+                            About us
+                        </Link>
+                    </MenuElement>
+                    <MenuElement>
+                        <Link to="/contact" className="menu__link">
+                            Contact
+                        </Link>
+                    </MenuElement>
+                </Menu>
                 }
                 {
                     !show && <div className="menu--burger">
@@ -78,33 +163,33 @@ const Header = () => {
                         {
                             men && <div className="menu--list">
                                 <ul className="menu--vertical">
-                                    <li className="menu__element">
+                                    <MenuElement>
                                         <Link to="/" className="menu__link">
                                             Home
                                         </Link>
-                                    </li>
-                                    <li className="menu__element">
+                                    </MenuElement>
+                                    <MenuElement>
                                         <Link to="/" className="menu__link">
                                             Blog
                                         </Link>
-                                    </li>
-                                    <li className="menu__element">
+                                    </MenuElement>
+                                    <MenuElement>
                                         <Link to="/" className="menu__link">
                                             About us
                                         </Link>
-                                    </li>
-                                    <li className="menu__element">
+                                    </MenuElement>
+                                    <MenuElement>
                                         <Link to="/" className="menu__link">
                                             Contact
                                         </Link>
-                                    </li>
+                                    </MenuElement>
                                 </ul>
                             </div>
                         }
                     </div>
                 }
-            </nav>
-        </header>
+                </NavWrapper>
+        </CoreHeader>
     )
 }
 

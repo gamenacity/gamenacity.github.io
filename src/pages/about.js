@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const BlogPage = () => {
+const About = () => {
     const Text = styled.div`
-    color: black;
+    color:black;
     `
     return (
         <Text>
@@ -12,4 +12,4 @@ const BlogPage = () => {
     )
 }
 
-export default BlogPage
+export default About
