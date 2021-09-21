@@ -13,10 +13,10 @@ a{
 }
 
 ::-webkit-scrollbar {
-    width: 20px;
-    background: $accent;
+    width: 15px;
+    background: linear-gradient($accent, $main-color); 
   }
   ::-webkit-scrollbar-thumb {
-    background: $main-color; 
+    background: $dark-2; 
     border-radius: 10px;
   }
